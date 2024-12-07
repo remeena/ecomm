@@ -1,0 +1,25 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        {% for item in cart_items %}
+            <li>
+                <h2>{{ item.product.name }}</h2>
+                <img src="{{ item.product.img }}">
+                <p>Price: ${{ item.product.price }}</p>
+                <p>Price: ${{ item.product.color }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+                <p>Subtotal: ${{ item.subtotal }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Total: ${{ total }}</h2>
+</body>
+</html>
